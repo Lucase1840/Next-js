@@ -3,7 +3,6 @@ import Container from '../components/container/Container'
 import axios from 'axios'
 import { useAppContext } from '../pages/context'
 
-
 export default function Heroes() {
     let heroes = useAppContext()
     return (

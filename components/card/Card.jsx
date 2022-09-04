@@ -8,7 +8,7 @@ export default function Card({ heroes }) {
     return (
         <>
             {
-                heroes.map((hero, i) => {
+                heroes ? heroes.map((hero, i) => {
                     return (
                         <div key={hero.id}>
                             <h1>{hero.name}</h1>
@@ -25,7 +25,7 @@ export default function Card({ heroes }) {
                             <p>{description ? description[i].description : ''}</p>
                         </div>)
                 })
-            }
+                    : ''}
         </>
     )
 }
