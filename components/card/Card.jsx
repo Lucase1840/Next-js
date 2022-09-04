@@ -1,12 +1,14 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { useAppContext } from '../../pages/context'
+
 
 export default function Card({ heroes }) {
+    let description = useAppContext()
     return (
         <>
             {
-                heroes.map((hero) => {
-                    console.log(hero.thumbnail.path)
+                heroes.map((hero, i) => {
                     return (
                         <div key={hero.id}>
                             <h1>{hero.name}</h1>
@@ -17,9 +19,10 @@ export default function Card({ heroes }) {
                                 height={200}
                                 unoptimized={true}
                             />
-                            <Link href="/details">
+                            <Link href={`/HeroDetails/${hero.id}`}>
                                 <a>More details</a>
                             </Link>
+                            <p>{description ? description[i].description : ''}</p>
                         </div>)
                 })
             }

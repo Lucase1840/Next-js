@@ -9,6 +9,7 @@ export default function Container(props) {
                 <title>Heroes Demo</title>
             </Head>
             <Navigation />
+            <h1>Heroes Project</h1>
             <div>
                 {props.children}
             </div>
